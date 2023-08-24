@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Railway.otf",
+      "sha1": "6514844e74b7a41d8ed53ee3ed8724c626050cf5"
+    },
+    {
+      "path": "assets/fonts/RailwayAlternate.otf",
+      "sha1": "6c9cbb528cc1c28db90c26b75451f0852b09dffb"
+    }
+  ]
+}

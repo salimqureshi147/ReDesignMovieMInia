@@ -11,6 +11,7 @@ const AppStack = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="SearchMovie" component={SearchMovie} />
+      <Stack.Screen name="MovieDetailPage" component={MovieDetailPage} />
     </Stack.Navigator>
   );
 };

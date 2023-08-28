@@ -13,7 +13,7 @@ import MyWrapper from '../components/myWrapper';
 import {
   Black,
   Gray200,
-  Gray300,
+ 
   Gray400,
   Secondary,
   White,
@@ -34,7 +34,7 @@ LogBox.ignoreAllLogs();
 const SearchMovie = ({navigation}) => {
   const [search, setSearch] = useState('');
   const [masterData, setMasterData] = useState([]);
-  const [emp, setEmp] = useState(AllData);
+  const [movie, setMovie] = useState(AllData);
   const [isDataAvailable, setIsDataAvailable] = useState(false);
   const [isRecent, setIsRecent] = useState(true);
 
@@ -53,10 +53,10 @@ const SearchMovie = ({navigation}) => {
         }
         return itemData.indexOf(textData) > -1;
       });
-      setEmp(newData);
+      setMovie(newData);
       setSearch(text);
     } else {
-      setEmp(masterData);
+      setMovie(masterData);
       setSearch(text);
     }
   };
@@ -76,13 +76,13 @@ searchFilter(item);
   };
 
   useEffect(() => {
-    if (emp.length < 1) {
+    if (movie.length < 1) {
       setIsDataAvailable(true);
     } else {
       setIsDataAvailable(false);
     }
     setMasterData(AllData);
-  }, [emp]);
+  }, [movie]);
 
   useEffect(() => {
     console.log(recentSearches, 'receeentttttttttttt');
@@ -162,7 +162,7 @@ searchFilter(item);
                 fontFamily: 'raleway-Medium',
                 fontSize: 14,
               }}>
-              {emp.length} Result Found
+              {movie.length} Result Found
             </Text>
             {isDataAvailable ? (
               <View
@@ -200,7 +200,7 @@ searchFilter(item);
                 <FlatList
                   numColumns={2}
                   renderItem={SearchView}
-                  data={emp}></FlatList>
+                  data={movie}></FlatList>
               </View>
             )}
           </View>

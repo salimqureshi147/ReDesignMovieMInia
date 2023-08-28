@@ -61,19 +61,22 @@ const SearchMovie = ({navigation}) => {
     }
   };
 const recentSearchButtons = (item)=>{
-console.log(item,'recent')
+// console.log(item,'recent')
 searchFilter(item);
 
 
 }
-  const ClickMovie = item => {
+const ClickMovie = item => {
+ 
+  if (!recentSearches.includes(item.Name)) {
     const updatedRecentSearches = [...recentSearches, item.Name];
     dispatch(setRecentSearches(updatedRecentSearches));
-    setIsRecent(true)
-    setSearch("")
-    navigation.navigate('MovieDetailPage');
-    
-  };
+  }
+
+  setIsRecent(true);
+  setSearch("");
+  navigation.navigate('MovieDetailPage');
+};
 
   useEffect(() => {
     if (movie.length < 1) {
